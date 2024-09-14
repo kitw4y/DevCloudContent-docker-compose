@@ -4,7 +4,7 @@
 # ==============================================================================
 FROM openvino/ubuntu20_data_runtime
 USER root
-RUN apt-get update && apt-get -y upgrade && apt-get autoremove
+RUN apt-get update && apt-get -y upgrade && apt-get autoremove && df -h && lscpu && pwd && whoami && free -h
 COPY . /application
 WORKDIR /application/example_client/
 ENV http_proxy="http://proxy-chain.intel.com:911"
